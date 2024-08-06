@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('populate_data', function (Blueprint $table) {
             $table->id();
             $table->integer('end_year')->nullable();
-            $table->decimal('citylng', 10, 8)->nullable();
-            $table->decimal('citylat', 10, 8)->nullable();
+            $table->double('citylng', 10, 8)->nullable();
+            $table->double('citylat', 10, 8)->nullable();
             $table->integer('intensity')->nullable();
             $table->string('sector')->nullable();
             $table->string('topic')->nullable();
-            $table->text('insight')->nullable(); // Use text for larger strings
+            $table->text('insight')->nullable();
             $table->string('swot')->nullable();
             $table->string('url')->nullable();
             $table->string('region')->nullable();
@@ -32,9 +32,9 @@ return new class extends Migration
             $table->integer('relevance')->nullable();
             $table->string('pestle')->nullable();
             $table->string('source')->nullable();
-            $table->string('title')->nullable();
+            $table->text('title')->nullable();
             $table->integer('likelihood')->nullable();
-            $table->timestamps();  // Timestamps are fine as they are
+            $table->timestamps();
         });
     }
 
